@@ -280,6 +280,7 @@ strong {
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0.02rem;
+  margin-bottom: 1.2rem;
 }
 
 .tag-bar {
@@ -407,4 +408,12 @@ strong {
   cursor: pointer;
 
   padding: 0.8rem 1.6rem;
+}
+
+
+/*=======================================================*/
+/*=========================== SEARCH-FORM SECTION =======*/
+/*=======================================================*/
+.project-search {
+  margin-bottom: 6.4rem;
 }

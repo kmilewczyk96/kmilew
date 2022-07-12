@@ -41,7 +41,7 @@
 				</div>
 				<div class="hero-whitespace">
 					<!--					<img src="img/cv_linkedin.jpg" alt="cv picture">-->
-					<img src="img/cv_linkedin_alt.jpg" alt="cv picture">
+					<img src="{{ my_account.home_img.url }}" alt="cv picture">
 				</div>
 
 			</div>
@@ -54,69 +54,27 @@
 					Feel free to check out my constantly growing project library.
 				</p>
 				<div class="container-3col">
-					<div class="project">
-						<div class="container-img">
-							<img class="project-img" src="img/project-portfolio.png" alt="project picture">
+					{% for project in showcase %}
+						<div class="project">
+							<div class="container-img">
+								<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+							</div>
+							<div class="project-info">
+								<h3 class="project-title">{{ project.name }}</h3>
+								<p class="project-description">
+									{{ project.description }}
+								</p>
+								<ul class="tag-bar">
+									{% for tag in project.tags.all %}
+										<li><span class="tag">{{ tag }}</span></li>
+									{% endfor %}
+								</ul>
+							</div>
 						</div>
-						<div class="project-info">
-							<h3 class="project-title">Portfolio</h3>
-							<p class="project-description">
-								My very own portfolio website, to create it I used my skills in both front and backend.
-								This project is also my first "live" website. Thanks to using Django adding or modifying projects saves
-								me a lot
-								of time and effort while keeping site up to date.
-							</p>
-						</div>
-						<ul class="tag-bar">
-							<li><span class="tag">Django</span></li>
-							<li><span class="tag">DjangoRESTframework</span></li>
-							<li><span class="tag">PostgreSQL</span></li>
-							<li><span class="tag">JavaScript</span></li>
-							<li><span class="tag">css</span></li>
-							<li><span class="tag">html</span></li>
-							<li><span class="tag">heroku</span></li>
-						</ul>
-					</div>
-					<div class="project">
-						<div class="container-img">
-							<img class="project-img" src="img/project-hangman.jpg" alt="project picture">
-						</div>
-						<div class="project-info">
-							<h3 class="project-title">Hangman</h3>
-							<p class="project-description">
-								My first project with implemented PyGame GUI. Project shows my skills in using OOP
-								and basics of Python language.
-							</p>
-						</div>
-						<ul class="tag-bar">
-							<li><span class="tag">#python</span></li>
-							<li><span class="tag">#javascript</span></li>
-							<li><span class="tag">#css</span></li>
-							<li><span class="tag">#html</span></li>
-							<li><span class="tag">#heroku</span></li>
-							<li><span class="tag">#django</span></li>
-						</ul>
-					</div>
-					<div class="project">
-						<div class="container-img">
-							<img class="project-img" src="img/project-snake.png" alt="project picture">
-						</div>
-						<div class="project-info">
-							<h3 class="project-title">Snake</h3>
-							<p class="project-description">
-								Classic snake game made with Python's builtin module called "Turtle". To complete this project
-								I had to use knowledge in pure Python such as: class inheritance and list slicing.
-
-							</p>
-						</div>
-						<ul class="tag-bar">
-							<li><span class="tag">Python</span></li>
-							<li><span class="tag">OOP</span></li>
-						</ul>
-					</div>
+					{% endfor %}
 				</div>
 				<div class="call-to-action">
-					<a class="btn btn--cta btn--cta-alt" href="#">See more projects</a>
+					<a class="btn btn--cta btn--cta-alt" href="{% url 'project-list' %}">See more projects</a>
 				</div>
 			</div>
 		</section>
