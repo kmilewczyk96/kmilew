@@ -1,0 +1,73 @@
+.project-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  background-color: #fff;
+  border: 1px solid #0c8599;
+  border-radius: 9px;
+  box-shadow: 0 0.6rem 36px rgba(32, 32, 32, 15%);
+}
+
+/* FIX IMAGE IF NOT IN 16:9 ASPECT RATIO */
+.container-img {
+  position: relative;
+  background-color: #212529;
+  width: 100%;
+  padding-bottom: 56%;
+  margin-bottom: 1.6rem;
+}
+
+.project-img {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  object-fit: fill;
+  width: 100%;
+}
+
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+
+.project-title {
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.project-description {
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.02rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-tag-bar {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  /*border-top: 1px solid #0c8599;*/
+  gap: 1rem;
+  padding: 0 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color: #f8f9fa;
+  color: #0b7285;
+  border: 1px solid #868e96;
+  border-radius: 12px;
+  padding: 0.8rem 1.6rem;
+}

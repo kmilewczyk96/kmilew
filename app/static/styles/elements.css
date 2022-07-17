@@ -1,0 +1,5 @@
+/*This stylesheet contains imports of repeatable elements.*/
+
+@import url("./elements/_button.css");
+@import url("./elements/_project-card.css");
+@import url("./elements/_search-bar.css");

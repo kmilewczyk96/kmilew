@@ -1,0 +1,39 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #868e96;
+  border-radius: 9px;
+  background-color: white;
+  padding: 0.8rem 1.6rem;
+}
+
+
+.search-form input,
+.search-form button {
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: none;
+  margin-right: 1.2rem;
+}
+
+.search-form input {
+  width: 16vw;
+}
+
+.search-form input::placeholder {
+  color: #ced4da;
+}
+
+.search-form input:focus {
+  outline: none;
+}
+
+.search-form button {
+  position: relative;
+  top: 0.2rem;
+  cursor: pointer;
+}
