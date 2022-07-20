@@ -1,0 +1,18 @@
+.container-flex-col-130 {
+  max-width: 130rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.container-flex-col-120 {
+  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.container-flex-1-to-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}

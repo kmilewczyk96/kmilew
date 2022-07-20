@@ -1,0 +1,88 @@
+.filter-container {
+  height: 100%;
+  width: auto;
+}
+
+.tag-filter-title {
+  align-self: flex-start;
+  font-weight: 500;
+}
+
+.tag-filter-form {
+  position: fixed;
+  display: flex;
+  width: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #adb5bd;
+  border-radius: 9px;
+  background-color: white;
+  padding: 1.6rem 3.2rem;
+  color: #343a40;
+  font-size: 2.0rem;
+  gap: 2.4rem;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.checkboxes li {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.tag-filter-buttons {
+  display: flex;
+  width: 100%;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.filter-btn {
+  /*Negate differences between anchor and button.*/
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  line-height: normal;
+  cursor: pointer;
+  color: #f1f3f5;
+  font-weight: normal;
+
+  /*Actual properties.*/
+  font-size: 2rem;
+  padding: 0.2rem 1.6rem;
+  transition: 0.4s;
+}
+
+.filter-btn--submit {
+  background-color: #1098ad;
+  width: 100%;
+}
+
+.filter-btn:hover {
+  background-color: #0b7285;
+}
+
+.filter-btn i {
+  position: relative;
+  top: 0.3rem;
+  margin-right: 0.4rem;
+}
+
+.filter-btn--clear {
+  background-color: #495057;
+}
+
+.filter-btn--clear:hover {
+  background-color: #d6336c;
+}

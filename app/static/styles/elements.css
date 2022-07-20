@@ -1,5 +1,7 @@
 /*This stylesheet contains imports of repeatable elements.*/
 
 @import url("./elements/_button.css");
+@import url("elements/_container_flex.css");
+@import url("elements/_container_grid.css");
 @import url("./elements/_project-card.css");
-@import url("./elements/_search-bar.css");
+@import url("./elements/_tag-filter.css");

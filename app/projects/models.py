@@ -13,9 +13,13 @@ class Project(models.Model):
     description = models.TextField(max_length=500)
     tags = models.ManyToManyField('Tag')
     is_favourite = models.BooleanField(default=False, null=False)
+    created = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-created']
 
 
 class Tag(models.Model):

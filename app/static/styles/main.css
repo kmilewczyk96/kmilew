@@ -19,13 +19,9 @@ body {
   line-height: 1;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
-strong {
-  color: #fff;
-}
+/*body::-webkit-scrollbar {*/
+/*  display: none;*/
+/*}*/
 
 /*=======================================================*/
 /*=========================== NAVIGATION ================*/
@@ -158,25 +154,6 @@ strong {
 .section-menu {
   padding: 9.6rem 0;
   color: #343a40;
-}
-
-.container-flex-col {
-  max-width: 120rem;
-  display: flex;
-  flex-direction: column;
-  /*background-color: #fff;*/
-  /*border: 1px solid #0c8599;*/
-  /*border-radius: 12px;*/
-  /*padding: 1.6rem 3.2rem;*/
-  margin: 0 auto;
-}
-
-.container-3col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /*align-items: flex-start;*/
-  column-gap: 4.8rem;
-  margin-bottom: 6.4rem;
 }
 
 .subheading {

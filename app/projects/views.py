@@ -1,6 +1,6 @@
-from django.db.models import ObjectDoesNotExist
 from django.views.generic import ListView
 
+from .forms import TagForm
 from .models import Project, Tag
 
 
@@ -9,23 +9,23 @@ class ProjectListView(ListView):
     model = Project
     paginate_by = 9
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ProjectListView, self).get_context_data(**kwargs)
+        context['projects'] = self.object_list
+        context['tag_filter'] = TagForm(self.request.GET)
+        return context
+
     def get_queryset(self):
-        search_query = self.request.GET.get('search_query')
-        object_list = self.model.objects.all()
-
-        if search_query:
-            tech_list = search_query.split(',')
+        queryset = self.model.objects.all()
+        filtered = self.request.GET.keys()
+        if filtered:
             tags = []
-            for tech in tech_list:
-                try:
-                    tag = Tag.objects.get(name__icontains=tech.strip())
-                except ObjectDoesNotExist:
-                    pass
-                else:
-                    tags.append(tag)
+            for tag_name in filtered:
+                tags.append(Tag.objects.get(name=tag_name))
 
-            object_list = object_list.distinct().filter(
+            queryset = queryset.filter(
                 tags__in=tags
-            )
+            ).distinct()
+            queryset = queryset.order_by('-created')
 
-        return object_list
+        return queryset

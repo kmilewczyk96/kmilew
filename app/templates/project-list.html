@@ -25,37 +25,53 @@
 		</ul>
 	</header>
 	<main>
-		<section class="section-search">
-			<form id="search-form" class="search-form" action="{% url 'project-list' %}" method="GET">
-				<button class="" type="submit">
-					<i class="ph-magnifying-glass"></i>
-				</button>
-				<label hidden for="search-form--phrase">Search for Projects:</label>
-				<input id="search-form--phrase" type="search" name="search_query"
-							 placeholder="enter technology name(s)" value="{{ search_query }}"/>
-			</form>
-		</section>
 		<section class="section-menu">
-			<div class="container-flex-col">
-				<div class="container-3col">
-					{% for project in object_list %}
-						<div class="project-card">
-							<div class="container-img">
-								<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+			<div class="container-flex-col-120">
+				<div class="container-flex-1-to-2">
+					<div class="filter-container">
+						<form class="tag-filter-form" action="{% url 'project-list' %}" method="GET">
+							<p class="tag-filter-title">Filters:</p>
+							<div class="checkboxes">
+								{% for tag in tag_filter %}
+									<ul class="checkboxes">
+										<li>
+											{{ tag }}
+											{{ tag.name }}
+										</li>
+									</ul>
+								{% endfor %}
 							</div>
-							<div class="project-info">
-								<h3 class="project-title">{{ project.name }}</h3>
-								<p class="project-description">
-									{{ project.description }}
-								</p>
-								<ul class="project-tag-bar">
-									{% for tag in project.tags.all %}
-										<li><span class="tag">{{ tag }}</span></li>
-									{% endfor %}
-								</ul>
+							<div class="tag-filter-buttons">
+								<button class="filter-btn filter-btn--submit" type="submit">
+									<i class="ph-magnifying-glass"></i>
+									Submit
+								</button>
+								<a class="filter-btn filter-btn--clear" href="{% url 'project-list' %}">
+									<i class="ph-x"></i>
+								</a>
 							</div>
-						</div>
-					{% endfor %}
+						</form>
+					</div>
+					<div class="container-2col">
+						{% for project in projects %}
+							<div class="project-card">
+								<div class="container-img">
+									<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+								</div>
+								<div class="project-info">
+									<h3 class="project-title">{{ project.name }}</h3>
+									<p class="project-description">
+										{{ project.description }}
+									</p>
+									<ul class="project-tag-bar">
+										{% for tag in project.tags.all %}
+											<li><span class="tag">{{ tag }}</span></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
 				</div>
 			</div>
 		</section>
