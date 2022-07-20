@@ -1,27 +1,23 @@
-.filter-container {
-  height: 100%;
-  width: auto;
-}
-
 .tag-filter-title {
   align-self: flex-start;
   font-weight: 500;
 }
 
 .tag-filter-form {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 9.6rem;
   display: flex;
   width: inherit;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 1px solid #adb5bd;
   border-radius: 9px;
   background-color: white;
-  padding: 1.6rem 3.2rem;
+  padding: 3.2rem 3.2rem;
   color: #343a40;
   font-size: 2.0rem;
   gap: 2.4rem;
+  margin-right: 4.8rem;
 }
 
 .checkboxes {
@@ -29,6 +25,7 @@
   flex-direction: column;
   list-style: none;
   gap: 1.2rem;
+  padding: 0 0.4rem;
 }
 
 .checkboxes li {
@@ -36,8 +33,34 @@
   gap: 1.2rem;
 }
 
-.checkbox {
+.tag-filter-checkbox {
+  display: grid;
+  place-content: center;
+
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.05rem solid #868e96;
+  border-radius: 1px;
+  transform: translateY(0.35rem);
+  margin: 0;
+}
+
+.tag-filter-checkbox::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  transform: scale(0);
+  transition: 0.2s transform ease-in-out;
+  box-shadow: inset 1.2rem 1.2rem #15aabf;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.tag-filter-checkbox:checked::before {
+  transform: scale(1);
 }
 
 .tag-filter-buttons {
@@ -65,7 +88,7 @@
 }
 
 .filter-btn--submit {
-  background-color: #1098ad;
+  background-color: #15aabf;
   width: 100%;
 }
 

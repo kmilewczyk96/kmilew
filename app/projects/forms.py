@@ -10,3 +10,7 @@ class TagForm(forms.Form):
         tags = Tag.objects.all().order_by(Lower('name'))
         for tag in tags:
             self.fields[tag.name] = forms.BooleanField(label=tag.name, required=False)
+
+        for checkbox in self.fields.values():
+            checkbox.widget.attrs.update({'class': 'tag-filter-checkbox'})
+

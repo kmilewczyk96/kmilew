@@ -23,9 +23,8 @@ class ProjectListView(ListView):
             for tag_name in filtered:
                 tags.append(Tag.objects.get(name=tag_name))
 
-            queryset = queryset.filter(
+            queryset = self.model.objects.filter(
                 tags__in=tags
-            ).distinct()
-            queryset = queryset.order_by('-created')
+            ).distinct('created')
 
         return queryset
