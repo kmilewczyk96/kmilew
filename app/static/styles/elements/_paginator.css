@@ -1,0 +1,11 @@
+.paginator {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid #adb5bd;
+  font-size: 1.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.paginator-object-count {
+
+}

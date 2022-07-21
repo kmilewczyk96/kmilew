@@ -16,3 +16,9 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
+
+.rename {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}

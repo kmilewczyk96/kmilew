@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="{% static 'styles/elements.css' %}"/>
 	<link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
 	<script defer src="https://unpkg.com/phosphor-icons"></script>
-	<script defer src="{% static 'js/project-list.js' %}"></script>
 	<title>Browse Projects</title>
 
 </head>
@@ -52,25 +51,32 @@
 							</div>
 						</form>
 					</div>
-					<div class="container-2col">
-						{% for project in projects %}
-							<div class="project-card">
-								<div class="container-img">
-									<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+					<div class="rename">
+						<aside class="paginator">
+							<p class="paginator-object-count">Showing {{ page_obj|length }} out of {{ projects|length }}
+								project{{ projects|length|pluralize }}.</p>
+							{% include 'paginator.html' %}
+						</aside>
+						<div class="container-2col">
+							{% for project in page_obj %}
+								<div class="project-card">
+									<div class="container-img">
+										<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+									</div>
+									<div class="project-info">
+										<h3 class="project-title">{{ project.name }}</h3>
+										<p class="project-description">
+											{{ project.description }}
+										</p>
+										<ul class="project-tag-bar">
+											{% for tag in project.tags.all %}
+												<li><span class="tag">{{ tag }}</span></li>
+											{% endfor %}
+										</ul>
+									</div>
 								</div>
-								<div class="project-info">
-									<h3 class="project-title">{{ project.name }}</h3>
-									<p class="project-description">
-										{{ project.description }}
-									</p>
-									<ul class="project-tag-bar">
-										{% for tag in project.tags.all %}
-											<li><span class="tag">{{ tag }}</span></li>
-										{% endfor %}
-									</ul>
-								</div>
-							</div>
-						{% endfor %}
+							{% endfor %}
+						</div>
 					</div>
 				</div>
 			</div>
