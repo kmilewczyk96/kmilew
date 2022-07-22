@@ -1,6 +1,6 @@
 'use strict';
 
-const checkIfFits = function () {
+const paginatorBottomVisibility = function () {
   // Add bottom paginator if doc height > viewport height:
   const documentHeight = document.documentElement.scrollHeight;
   const viewportHeight = window.innerHeight;
@@ -13,8 +13,8 @@ const checkIfFits = function () {
   }
 };
 
-window.addEventListener('load', checkIfFits);
-window.addEventListener('resize', checkIfFits);
+window.addEventListener('load', paginatorBottomVisibility);
+window.addEventListener('resize', paginatorBottomVisibility);
 
 const tagFilterForm = document.getElementsByClassName('tag-filter-form')[0];
 const paginatorLinks = document.getElementsByClassName('paginator-link');

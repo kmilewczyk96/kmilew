@@ -1,4 +1,3 @@
-/*TODO: fix thumbnail scaling.*/
 .project-card {
   overflow: hidden;
   display: grid;
@@ -7,24 +6,23 @@
   background-color: #fff;
   border: 1px solid #0c8599;
   border-radius: 9px;
-  /*box-shadow: 0 0.6rem 36px rgba(32, 32, 32, 15%);*/
 }
 
-/* FIX IMAGE IF NOT IN 16:9 ASPECT RATIO */
 .container-img {
   position: relative;
-  background-color: #212529;
   width: 100%;
-  padding-bottom: 56%;
+  padding-top: 56.25%;
   margin-bottom: 1.6rem;
 }
 
 .project-img {
   position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  object-fit: fill;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 
