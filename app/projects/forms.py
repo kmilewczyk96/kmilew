@@ -13,4 +13,3 @@ class TagForm(forms.Form):
 
         for checkbox in self.fields.values():
             checkbox.widget.attrs.update({'class': 'tag-filter-checkbox'})
-

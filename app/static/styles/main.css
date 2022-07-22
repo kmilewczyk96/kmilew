@@ -19,6 +19,10 @@ body {
   line-height: 1;
 }
 
+.hidden {
+  display: none;
+}
+
 /*body::-webkit-scrollbar {*/
 /*  display: none;*/
 /*}*/

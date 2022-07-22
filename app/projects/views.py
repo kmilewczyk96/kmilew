@@ -1,3 +1,4 @@
+from django.db.models import ObjectDoesNotExist
 from django.views.generic import ListView
 
 from .forms import TagForm
@@ -18,11 +19,17 @@ class ProjectListView(ListView):
     def get_queryset(self):
         queryset = self.model.objects.all()
         filtered = self.request.GET.keys()
-        if filtered:
-            tags = []
-            for tag_name in filtered:
-                tags.append(Tag.objects.get(name=tag_name))
 
+        tags = []
+        for tag_name in filtered:
+            try:
+                tag = Tag.objects.get(name=tag_name)
+            except ObjectDoesNotExist:
+                pass
+            else:
+                tags.append(tag)
+
+        if tags:
             queryset = self.model.objects.filter(
                 tags__in=tags
             ).distinct('created')

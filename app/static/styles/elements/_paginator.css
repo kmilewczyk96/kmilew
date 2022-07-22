@@ -1,11 +1,28 @@
 .paginator {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.1rem solid #adb5bd;
   font-size: 1.4rem;
-  padding-bottom: 0.4rem;
 }
 
-.paginator-object-count {
+.paginator--top {
+  border-bottom: 0.1rem solid #adb5bd;
+  padding: 0 0.2rem 0.4rem 0.2rem;
+}
 
+.paginator--bottom {
+  border-top: 0.1rem solid #adb5bd;
+  padding: 0.4rem 0.2rem;
+}
+
+.paginator-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.paginator-link:link,
+.paginator-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #343a40;
 }

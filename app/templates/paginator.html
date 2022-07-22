@@ -1,3 +1,17 @@
 {% if page_obj.has_other_pages %}
-	<p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+	<div class="paginator-buttons">
+		{% if page_obj.has_previous %}
+			<a class="paginator-link"
+				 href="?={{ page_obj.previous_page_number }}"
+				 data-page="{{ page_obj.previous_page_number }}">&#10094;</a>
+		{% endif %}
+
+		<p class="paginator-page-info">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+
+		{% if page_obj.has_next %}
+			<a class="paginator-link"
+				 href="?={{ page_obj.next_page_number }}"
+				 data-page="{{ page_obj.next_page_number }}">&#10095;</a>
+		{% endif %}
+	</div>
 {% endif %}

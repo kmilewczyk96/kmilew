@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="{% static 'styles/elements.css' %}"/>
 	<link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
 	<script defer src="https://unpkg.com/phosphor-icons"></script>
+	<script defer src="{% static 'js/project-list.js' %}"></script>
 	<title>Browse Projects</title>
 
 </head>
@@ -52,7 +53,7 @@
 						</form>
 					</div>
 					<div class="rename">
-						<aside class="paginator">
+						<aside class="paginator paginator--top">
 							<p class="paginator-object-count">Showing {{ page_obj|length }} out of {{ projects|length }}
 								project{{ projects|length|pluralize }}.</p>
 							{% include 'paginator.html' %}
@@ -77,6 +78,11 @@
 								</div>
 							{% endfor %}
 						</div>
+						<aside class="paginator paginator--bottom hidden">
+							<p class="paginator-object-count">Showing {{ page_obj|length }} out of {{ projects|length }}
+								project{{ projects|length|pluralize }}.</p>
+							{% include 'paginator.html' %}
+						</aside>
 					</div>
 				</div>
 			</div>
