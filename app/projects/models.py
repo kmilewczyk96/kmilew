@@ -50,7 +50,7 @@ class Tag(models.Model):
         (5, 'Backend programming language'),
         (4, 'Backend Framework'),
         (3, 'Frontend Framework'),
-        (2, 'Frontend - java, css, html'),
+        (2, 'Frontend - js, css, html'),
         (1, 'Tools - docker etc.')
     ]
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)

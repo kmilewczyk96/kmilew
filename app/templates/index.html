@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
 	<script defer src="https://unpkg.com/phosphor-icons"></script>
 	<script defer src="{% static 'js/main.js' %}"></script>
+	<script defer src="{% static 'js/tagbar-animation.js' %}"></script>
 	<title>Karol Milewczyk</title>
 
 </head>
@@ -64,6 +65,9 @@
 									<ul class="project-tag-bar">
 										{% for tag in project.tags.all %}
 											<li><span class="tag">{{ tag }}</span></li>
+										{% endfor %}
+										{% for tag in project.tags.all %}
+											<li class="hidden"><span class="tag">{{ tag }}</span></li>
 										{% endfor %}
 									</ul>
 									<p class="project-description">
