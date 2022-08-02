@@ -1,0 +1,31 @@
+/* GENERAL PURPOSE GRID CONTAINERS: */
+.container-grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* PROJECT RELATED GRID CONTAINER VARIATIONS: */
+.project-showcase-grid {
+  align-items: flex-start;
+  column-gap: 4.8rem;
+  margin-bottom: 6.4rem;
+}
+
+.project-list-grid {
+  align-items: start;
+  column-gap: 4.8rem;
+  row-gap: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+
+/* CONTACT FORM RELATED GRID CONTAINER VARIATIONS */
+.contact-form-grid {
+  border: 1px solid #0b7285;
+  border-radius: 11px;
+  padding: 4.8rem;
+}

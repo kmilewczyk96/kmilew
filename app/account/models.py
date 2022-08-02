@@ -5,12 +5,12 @@ from django.conf import settings
 from django.db import models
 
 
-def home_img_upload_path(instance, filename):
+def home_img_upload_path(_, filename):
     """Generate file for home profile pic."""
     extension = os.path.splitext(filename)[1]
     filename = 'home' + extension
 
-    return os.path.join('account', instance.owner.email, filename)
+    return os.path.join('account', filename)
 
 
 class Account(models.Model):
@@ -31,3 +31,20 @@ class Account(models.Model):
 
     def __str__(self):
         return self.owner.email.split('@')[0]
+
+
+class Message(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    recipient = models.ForeignKey(Account, on_delete=models.CASCADE, null=True)
+    sender_name = models.CharField(max_length=250)
+    sender_email = models.EmailField(max_length=250)
+    company = models.CharField(max_length=250, null=True, blank=True)
+    message = models.TextField(max_length=2000)
+    is_read = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.sender_email
+
+    class Meta:
+        ordering = ['is_read', '-created']

@@ -1,3 +1,4 @@
+/* GENERAL PURPOSE FLEX CONTAINERS: */
 .container-flex-col-130 {
   max-width: 130rem;
   display: flex;
@@ -20,5 +21,11 @@
 .rename {
   display: flex;
   flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* CONTACT FORM RELATED FLEX CONTAINERS */
+.social-media-link {
+  display: flex;
   gap: 1.6rem;
 }

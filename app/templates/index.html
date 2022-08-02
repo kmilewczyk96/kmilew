@@ -36,11 +36,10 @@
 					</p>
 					<div class="hero-links">
 						<a class="btn btn--cta" href="#contact">Get in touch</a>
-						<a class="btn btn--jump" href="#projects">Learn more &darr;</a>
+						<a class="btn btn--jump" href="#projects">Demo &darr;</a>
 					</div>
 				</div>
 				<div class="hero-whitespace">
-					<!--					<img src="img/cv_linkedin.jpg" alt="cv picture">-->
 					<img src="{{ my_account.home_img.url }}" alt="cv picture">
 				</div>
 
@@ -53,22 +52,38 @@
 				<p class="menu-description">
 					Feel free to check out my constantly growing project library.
 				</p>
-				<div class="container-3col">
+				<div class="container-grid-3col project-showcase-grid">
 					{% for project in showcase %}
-						<div class="project-card">
-							<div class="container-img">
-								<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+						<div class="project-info-and-links-container">
+							<div class="project-card">
+								<div class="container-img">
+									<img class="project-img" src="{{ project.thumbnail.url }}" alt="project thumbnail">
+								</div>
+								<div class="project-info">
+									<h3 class="project-title">{{ project.name }}</h3>
+									<ul class="project-tag-bar">
+										{% for tag in project.tags.all %}
+											<li><span class="tag">{{ tag }}</span></li>
+										{% endfor %}
+									</ul>
+									<p class="project-description">
+										{{ project.description }}
+									</p>
+								</div>
 							</div>
-							<div class="project-info">
-								<h3 class="project-title">{{ project.name }}</h3>
-								<p class="project-description">
-									{{ project.description }}
-								</p>
-								<ul class="project-tag-bar">
-									{% for tag in project.tags.all %}
-										<li><span class="tag">{{ tag }}</span></li>
-									{% endfor %}
-								</ul>
+							<div class="project-card-links-container">
+								{% if project.source_code %}
+									<a class="project-card-links" href="{{ project.source_code }}"
+										 target="_blank"
+										 rel="noreferrer noopener">Source Code
+									</a>
+								{% endif %}
+								{% if project.demo %}
+									<a class="project-card-links" href="{{ project.demo }}"
+										 target="_blank"
+										 rel="noreferrer noopener">Demo
+									</a>
+								{% endif %}
 							</div>
 						</div>
 					{% endfor %}
@@ -79,33 +94,41 @@
 			</div>
 		</section>
 		<section class="section-contact" id="contact">
-			<div class="container-flex-col">
-				<form class="contact-form">
+			<div class="container-grid-2col contact-form-grid">
+				<div class="contact-form-content-col">
+					<p>Find me on...</p>
+					<div class="social-media-links">
+						{% if my_account.link_linkedin %}
+							<i class="ph-linkedin-logo"></i>
+						{% endif %}
+						{% if my_account.link_twitter %}
+						{% endif %}
+					</div>
+					<p>...or fill the form.</p>
+				</div>
+				<form class="contact-form" method="POST">
+					{% csrf_token %}
 					<div class="contact-form-content-col">
 						<div class="contact-form-field">
-							<label for="contact-form-name">Your name</label>
-							<input id="contact-form-name" type="text" placeholder="Mike Wazowski">
+							<label for="contact-form-name">Name</label>
+							{{ form.sender_name }}
 						</div>
-
 						<div class="contact-form-field">
 							<label for="contact-form-company">Company</label>
-							<input id="contact-form-company" type="text" placeholder="Monsters, Inc.">
+							{{ form.company }}
 						</div>
-
 						<div class="contact-form-field">
 							<label for="contact-form-email">E-mail</label>
-							<input id="contact-form-email" type="email" placeholder="wazowski@monsters.com">
+							{{ form.sender_email }}
 						</div>
-
 						<div class="contact-form-field">
 							<label for="contact-form-message">Message</label>
-							<textarea id="contact-form-message" rows="8" cols="40" placeholder="Your message..."></textarea>
+							{{ form.message }}
 						</div>
-
-
 						<button class="btn btn--submit">Send</button>
 					</div>
 				</form>
+
 			</div>
 		</section>
 	</main>
