@@ -5,6 +5,7 @@
 }
 
 .project-card {
+  min-width: 350px;
   position: relative;
   overflow: hidden;
   display: grid;

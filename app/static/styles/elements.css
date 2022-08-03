@@ -5,6 +5,8 @@
 @import url("./elements/_container-flex.css");
 @import url("./elements/_container-grid.css");
 @import url("./elements/_icon-and-logo.css");
+@import url("./elements/_link.css");
+@import url("./elements/_margin.css");
 @import url("./elements/_paginator.css");
 @import url("./elements/_project-card.css");
 @import url("./elements/_scrollbar.css");

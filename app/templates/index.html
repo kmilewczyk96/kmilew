@@ -49,9 +49,10 @@
 		<section class="section-menu" id="projects">
 			<div class="container-flex-col-120">
 				<span class="subheading">Projects</span>
-				<h2 class="heading2">My skills in practice</h2>
+				<h2 class="heading2 margin-bottom-24">My skills in practice</h2>
 				<p class="menu-description">
-					Feel free to check out my constantly growing project library.
+					You can find more projects in my constantly growing
+					<a class="classic-link" href="{% url 'project-list' %}">project library</a>.
 				</p>
 				<div class="container-grid-3col project-showcase-grid">
 					{% for project in showcase %}
@@ -92,47 +93,52 @@
 						</div>
 					{% endfor %}
 				</div>
-				<div class="call-to-action">
-					<a class="btn btn--cta btn--cta-alt" href="{% url 'project-list' %}">See more projects</a>
-				</div>
 			</div>
 		</section>
 		<section class="section-contact" id="contact">
-			<div class="container-grid-2col contact-form-grid">
-				<div class="contact-form-content-col">
-					<p>Find me on...</p>
-					<div class="social-media-links">
-						{% if my_account.link_linkedin %}
-							<i class="ph-linkedin-logo"></i>
-						{% endif %}
-						{% if my_account.link_twitter %}
-						{% endif %}
-					</div>
-					<p>...or fill the form.</p>
+			<div>
+				<div class="container-flex-col-120">
+					<span class="subheading">Contact</span>
+					<h2 class="heading2 margin-bottom-48">Let's work together!</h2>
 				</div>
 				<form class="contact-form" method="POST">
 					{% csrf_token %}
 					<div class="contact-form-content-col">
 						<div class="contact-form-field">
-							<label for="contact-form-name">Name</label>
+							<label for="contact-form-name">Name
+								{% if form.sender_name.field.required %}
+									<span class="field-required">&#10035;</span>
+								{% endif %}
+							</label>
 							{{ form.sender_name }}
 						</div>
 						<div class="contact-form-field">
-							<label for="contact-form-company">Company</label>
-							{{ form.company }}
-						</div>
-						<div class="contact-form-field">
-							<label for="contact-form-email">E-mail</label>
+							<label for="contact-form-email">E-mail
+								{% if form.sender_email.field.required %}
+									<span class="field-required">&#10035;</span>
+								{% endif %}
+							</label>
 							{{ form.sender_email }}
 						</div>
 						<div class="contact-form-field">
-							<label for="contact-form-message">Message</label>
+							<label for="contact-form-company">Company
+								{% if form.company.field.required %}
+									<span class="field-required">&#10035;</span>
+								{% endif %}
+							</label>
+							{{ form.company }}
+						</div>
+						<div class="contact-form-field">
+							<label for="contact-form-message">Message
+								{% if form.message.field.required %}
+									<span class="field-required">&#10035;</span>
+								{% endif %}
+							</label>
 							{{ form.message }}
 						</div>
 						<button class="btn btn--submit">Send</button>
 					</div>
 				</form>
-
 			</div>
 		</section>
 	</main>

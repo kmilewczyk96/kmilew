@@ -20,7 +20,7 @@ class Project(models.Model):
     thumbnail = models.ImageField(null=False, upload_to=thumbnail_img_upload_path)
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
-    tags = models.ManyToManyField('Tag')
+    tags = models.ManyToManyField('Tag', related_name='projects')
     source_code = models.CharField(max_length=250, null=True, blank=True)
     demo = models.CharField(max_length=250, null=True, blank=True)
     is_favourite = models.BooleanField(default=False, null=False)
@@ -37,7 +37,7 @@ class Project(models.Model):
             charset=None
         )
         super(Project, self).save(*args, **kwargs)
-        
+
     def __str__(self):
         return self.name
 

@@ -3,17 +3,12 @@
   max-width: 120rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #343a40;
   padding: 9.6rem 0;
   margin: 0 auto;
 }
 
 .contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
-  background-color: rgba(248, 249, 250, 0.80);
 
 }
 
@@ -32,6 +27,12 @@
 
 .contact-form-field label {
   font-size: 1.4rem;
+}
+
+.field-required {
+  display: inline-block;
+  transform: translateY(-30%);
+  color: red;
 }
 
 .contact-form-field input::placeholder,
