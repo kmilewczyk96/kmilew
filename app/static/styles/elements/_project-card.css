@@ -38,25 +38,6 @@
   z-index: 2;
 }
 
-.project-card-links:link,
-.project-card-links:visited {
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2rem;
-  background-color: #15aabf;
-  border: 1px solid #0b7285;
-  border-radius: 9px;
-  color: #f8f9fa;
-  transition: 0.3s;
-  padding: 0.8rem 2.4rem;
-}
-
-.project-card-links:link:hover,
-.project-card-links:visited:hover {
-  background-color: #0b7285;
-}
-
 .container-img {
   position: relative;
   width: 100%;

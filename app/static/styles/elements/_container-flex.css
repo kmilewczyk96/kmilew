@@ -18,14 +18,14 @@
   grid-template-columns: 1fr 2fr;
 }
 
+.container-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .rename {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-}
-
-/* CONTACT FORM RELATED FLEX CONTAINERS */
-.social-media-link {
-  display: flex;
   gap: 1.6rem;
 }

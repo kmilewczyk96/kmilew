@@ -9,7 +9,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'styles/elements.css' %}"/>
 	<link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
 	<script defer src="https://unpkg.com/phosphor-icons"></script>
 	<script defer src="{% static 'js/main.js' %}"></script>
@@ -20,7 +19,7 @@
 
 <body>
 	<header class="header-nav">
-		<ul class="link-list">
+		<ul class="nav-link-list">
 			<li><a class="page-link" href="#">Home</a></li>
 			<li><a class="page-link" href="#projects">Projects</a></li>
 			<li><a class="page-link" href="#contact">Contact</a></li>
@@ -28,32 +27,26 @@
 	</header>
 	<main>
 		<section class="section-hero">
-			<div class="hero">
-
+			<div class="container-grid-2col hero">
 				<div class="hero-content">
-					<h1><span>{{ my_account.first_name }}</span> {{ my_account.last_name }}</h1>
+					<h1 class="heading1">{{ my_account.first_name }} {{ my_account.last_name }}</h1>
 					<p class="hero-introduction">
 						{{ my_account.description }}
 					</p>
 					<div class="hero-links">
 						<a class="btn btn--cta" href="#contact">Get in touch</a>
-						<a class="btn btn--jump" href="#projects">Demo &darr;</a>
+						<a class="btn btn--cta-alt" href="#projects">Learn more</a>
 					</div>
 				</div>
 				<div class="hero-whitespace">
 					<img src="{{ my_account.home_img.url }}" alt="cv picture">
 				</div>
-
 			</div>
 		</section>
-		<section class="section-menu" id="projects">
+		<section class="section-showcase" id="projects">
 			<div class="container-flex-col-120">
 				<span class="subheading">Projects</span>
-				<h2 class="heading2 margin-bottom-24">My skills in practice</h2>
-				<p class="menu-description">
-					You can find more projects in my constantly growing
-					<a class="classic-link" href="{% url 'project-list' %}">project library</a>.
-				</p>
+				<h2 class="heading2 margin-bottom-48">My skills in practice</h2>
 				<div class="container-grid-3col project-showcase-grid">
 					{% for project in showcase %}
 						<div class="project-info-and-links-container">
@@ -78,13 +71,13 @@
 							</div>
 							<div class="project-card-links-container">
 								{% if project.source_code %}
-									<a class="project-card-links" href="{{ project.source_code }}"
+									<a class="btn btn--cta" href="{{ project.source_code }}"
 										 target="_blank"
 										 rel="noreferrer noopener">Source Code
 									</a>
 								{% endif %}
 								{% if project.demo %}
-									<a class="project-card-links" href="{{ project.demo }}"
+									<a class="btn btn--cta" href="{{ project.demo }}"
 										 target="_blank"
 										 rel="noreferrer noopener">Demo
 									</a>
@@ -92,6 +85,9 @@
 							</div>
 						</div>
 					{% endfor %}
+				</div>
+				<div class="container-flex-center">
+					<a class="btn btn--cta" href="{% url 'project-list' %}">Browse more projects</a>
 				</div>
 			</div>
 		</section>
@@ -136,7 +132,7 @@
 							</label>
 							{{ form.message }}
 						</div>
-						<button class="btn btn--submit">Send</button>
+						<button class="btn btn--cta">Send</button>
 					</div>
 				</form>
 			</div>

@@ -1,0 +1,29 @@
+.hero {
+  max-width: 130rem;
+  height: 100vh;
+  align-items: end;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.hero-content {
+  align-self: center;
+}
+
+.hero-introduction {
+  font-size: 2.4rem;
+  line-height: 1.5;
+
+  margin-bottom: 2.8rem;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.hero-whitespace img{
+  height: 95vh;
+  display: block;
+  border-radius: 11px;
+}

@@ -1,16 +1,15 @@
 from django.db.models import Count
-from django.db.models.signals import pre_delete
+from django.db.models.signals import post_delete
 
 from .models import Project, Tag
 
 
 def check_tag_count(sender, instance, **kwargs):
-    project = instance
+    """Delete tags if the only project related to them was just deleted."""
     tags_with_counter = Tag.objects.annotate(Count('projects'))
-    project_tags = project.tags.all()
     for tag in tags_with_counter:
-        if tag.projects__count == 1 and tag in project_tags:
+        if tag.projects__count == 0:
             tag.delete()
 
 
-pre_delete.connect(receiver=check_tag_count, sender=Project)
+post_delete.connect(receiver=check_tag_count, sender=Project)

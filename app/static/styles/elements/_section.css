@@ -1,0 +1,19 @@
+.section-hero {
+  height: 100vh;
+  display: flex;
+  background-image: linear-gradient(rgb(181, 181, 179), rgb(255, 255, 255));
+}
+
+.section-showcase {
+  padding: 9.6rem 0;
+}
+
+.section-contact {
+  height: 100vh;
+  max-width: 120rem;
+  display: flex;
+  align-items: center;
+  color: #343a40;
+  padding: 9.6rem 0;
+  margin: 0 auto;
+}

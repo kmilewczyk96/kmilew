@@ -9,7 +9,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'styles/elements.css' %}"/>
 	<link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
 	<script defer src="https://unpkg.com/phosphor-icons"></script>
 	<script defer src="{% static 'js/project-list.js' %}"></script>
@@ -19,7 +18,7 @@
 
 <body>
 	<header class="header-nav">
-		<ul class="link-list">
+		<ul class="nav-link-list">
 			<li><a class="page-link" href="{% url 'home' %}">Home</a></li>
 			<li><a class="page-link" href="{% url 'home' %}#contact">Contact</a></li>
 		</ul>
@@ -82,13 +81,13 @@
 									</div>
 									<div class="project-card-links-container">
 										{% if project.source_code %}
-											<a class="project-card-links" href="{{ project.source_code }}"
+											<a class="btn btn--cta" href="{{ project.source_code }}"
 												 target="_blank"
 												 rel="noreferrer noopener">Source Code
 											</a>
 										{% endif %}
 										{% if project.demo %}
-											<a class="project-card-links" href="{{ project.demo }}"
+											<a class="btn btn--cta" href="{{ project.demo }}"
 												 target="_blank"
 												 rel="noreferrer noopener">Demo
 											</a>

@@ -15,13 +15,13 @@ def message_notification(sender, instance, created, **kwargs):
                   f'\n' \
                   f'{message_form_data.message}'
 
-        send_mail(
-            subject=subject,
-            message=message,
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[Account.objects.first().owner.email],
-            fail_silently=False
-        )
+        # send_mail(
+        #     subject=subject,
+        #     message=message,
+        #     from_email=settings.EMAIL_HOST_USER,
+        #     recipient_list=[Account.objects.first().owner.email],
+        #     fail_silently=False
+        # )
 
 
 post_save.connect(receiver=message_notification, sender=Message)

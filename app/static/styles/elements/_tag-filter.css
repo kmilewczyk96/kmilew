@@ -66,6 +66,7 @@
 .tag-filter-buttons {
   display: flex;
   width: 100%;
+  border: 1px solid #343a40;
   border-radius: 9px;
   overflow: hidden;
 }
@@ -80,11 +81,16 @@
   cursor: pointer;
   color: #f1f3f5;
   font-weight: normal;
+  font-family: inherit;
 
   /*Actual properties.*/
   font-size: 2rem;
   padding: 0.2rem 1.6rem;
   transition: 0.4s;
+}
+
+.filter-btn:hover > i {
+  transform: scale(1.1);
 }
 
 .filter-btn--submit {
@@ -100,6 +106,7 @@
   position: relative;
   top: 0.3rem;
   margin-right: 0.4rem;
+  transition: 0.3s ease-in-out;
 }
 
 .filter-btn--clear {

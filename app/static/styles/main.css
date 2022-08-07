@@ -1,7 +1,21 @@
-/*=======================================================*/
-/*=========================== GENERAL ===================*/
-/*=======================================================*/
+/*==== IMPORTS =================*/
+@import url("./elements/_button.css");
+@import url("./elements/_contact-form.css");
+@import url("./elements/_container-flex.css");
+@import url("./elements/_container-grid.css");
+@import url("./elements/_heading.css");
+@import url("./elements/_hero.css");
+@import url("./elements/_icon-and-logo.css");
+@import url("./elements/_link.css");
+@import url("./elements/_margin.css");
+@import url("./elements/_navbar.css");
+@import url("./elements/_paginator.css");
+@import url("./elements/_project-card.css");
+@import url("./elements/_scrollbar.css");
+@import url("./elements/_section.css");
+@import url("./elements/_tag-filter.css");
 
+/*==== GLOBAL STYLING ==========*/
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +29,7 @@ html {
 body {
   font-family: Ubuntu, sans-serif;
   font-weight: 300;
-  color: #f1f3f5;
+  color: #343a40;
   line-height: 1;
 }
 
@@ -23,155 +37,9 @@ body {
   display: none;
 }
 
-/*body::-webkit-scrollbar {*/
-/*  display: none;*/
-/*}*/
-
-/*=======================================================*/
-/*=========================== NAVIGATION ================*/
-/*=======================================================*/
-.header-nav {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(rgba(52, 58, 64, 0.95), rgba(52, 58, 64, 0.95));
-  box-shadow: 0 1.2rem 3.2rem rgba(32, 32, 32, 5%);
-  padding: 0 4.8rem;
-  z-index: 5;
-}
-
-.link-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 3.2rem;
-  padding: 1.2rem 3.2rem;
-}
-
-.page-link:link,
-.page-link:visited {
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #f1f3f5;
-  border: 1px solid rgba(248, 249, 250, 0);
-  transition: 0.3s;
-
-  padding: 0.8rem 0.4rem;
-}
-
-.page-link:hover {
-  color: #f8f9fa;
-  border-bottom-color: #f8f9fa;
-}
-
-.link-list li:first-child {
-  margin-right: auto;
-}
-
-/*=======================================================*/
-/*=========================== HERO SECTION ==============*/
-/*=======================================================*/
-.section-hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-
-  /*background-image: linear-gradient(rgba(32, 32, 32, 0.55), rgba(32, 32, 32, 0.55)), url('img/hero-section-temp.jpg');*/
-  /*background-size: cover;*/
-  background-color: #495057;
-
-  margin: 0 auto;
-}
-
-.hero {
-  max-width: 130rem;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: end;
-
-  margin: 0 auto;
-  padding: 0 3.2rem;
-}
-
-.hero-whitespace img{
-  height: 95vh;
-  display: block;
-  border-radius: 11px;
-}
-
-.hero-content {
-  align-self: center;
-}
-
-.hero-content h1 {
-  font-size: 5.2rem;
-  font-weight: 700;
-  letter-spacing: -0.05rem;
-  line-height: 1.05;
-
-  margin-bottom: 3.2rem;
-}
-
-.hero-content h1 span {
-  font-weight: 400;
-}
-
-.hero-introduction {
-  font-size: 2.4rem;
-  line-height: 1.5;
-
-  margin-bottom: 2.8rem;
-}
-
-.hero-links {
-  display: flex;
-  gap: 1.6rem;
-}
-
-/*=======================================================*/
-/*=========================== MENU SECTION ==============*/
-/*=======================================================*/
-.section-menu {
-  padding: 9.6rem 0;
-  color: #343a40;
-}
-
-.subheading {
-  grid-column: 1;
-  font-size: 1.6rem;
-  font-weight: 500;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-  color: #0c8599;
-  margin-bottom: 0.8rem;
-}
-
-.heading2 {
-  grid-column: 1;
-  font-size: 5.2rem;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.menu-description {
-  grid-column: 1;
-  font-size: 1.8rem;
-  line-height: 1.5;
-  margin-bottom: 4.8rem;
-}
-
-.call-to-action {
-  display: flex;
-  justify-content: center;
+/*==== MEDIA QUERIES ===========*/
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
 }

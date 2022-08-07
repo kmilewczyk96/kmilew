@@ -1,50 +1,53 @@
+.btn,
 .btn:link,
 .btn:visited {
+  cursor: pointer;
   text-decoration: none;
+  text-align: center;
   display: inline-block;
+  font-family: inherit;
   font-size: 2rem;
   font-weight: 400;
-  color: #f8f9fa;
-
   border-radius: 9px;
   transition: 0.3s;
-
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem 2.4rem;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:link:hover,
+.btn:visited:hover {
   color: #fff;
-  box-shadow: 0 0 1.6rem rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 36px 5px rgba(0, 0, 0, 15%);
 }
 
-.btn:active {
+.btn:active,
+.btn:link:active,
+.btn:visited:active {
   box-shadow: none;
 }
 
+.btn--cta,
 .btn--cta:link,
 .btn--cta:visited {
-  background-color: #0c8599;
-  border: 1px solid #f8f9fa;
+  background-color: #15aabf;
+  color: #f8f9fa;
+  border: 1px solid #0b7285;
 }
 
-.btn--jump:link,
-.btn--jump:visited {
-  border: 1px solid #adb5bd;
+.btn--cta:hover,
+.btn--cta:link:hover,
+.btn--cta:visited:hover {
+  background-color: #0b7285
 }
 
 .btn.btn--cta-alt:link,
 .btn.btn--cta-alt:visited {
-  background-color: #495057;
+  color: #343a40;
+  background-color: transparent;
   border: 1px solid #212529;
-  box-shadow: 0 1.2rem 24px rgba(32, 32, 32, 0.2);
 }
 
 .btn.btn--cta-alt:hover {
-  background-color: #0c8599;
+  background-color: #495057;
   color: #fff;
-  box-shadow: 0 1.2rem 24px rgba(32, 32, 32, 0.5);
-}
-
-.btn.btn--cta-alt:active {
-  box-shadow: none;
 }
