@@ -27,7 +27,8 @@
 	</header>
 	<main>
 		<section class="section-hero">
-			<div class="container-grid-2col hero">
+			<div class="container-hero">
+				<div class="aesthetic"></div>
 				<div class="hero-content">
 					<h1 class="heading1">{{ my_account.first_name }} {{ my_account.last_name }}</h1>
 					<p class="hero-introduction">
@@ -44,9 +45,11 @@
 			</div>
 		</section>
 		<section class="section-showcase" id="projects">
-			<div class="container-flex-col-120">
-				<span class="subheading">Projects</span>
-				<h2 class="heading2 margin-bottom-48">My skills in practice</h2>
+			<div class="container-flex-col-120 container-showcase">
+				<div class="section-header">
+					<span class="subheading">Projects</span>
+					<h2 class="heading2 margin-bottom-48">My skills in practice</h2>
+				</div>
 				<div class="container-grid-3col project-showcase-grid">
 					{% for project in showcase %}
 						<div class="project-info-and-links-container">
@@ -61,7 +64,7 @@
 											<li><span class="tag">{{ tag }}</span></li>
 										{% endfor %}
 										{% for tag in project.tags.all %}
-											<li class="hidden"><span class="tag">{{ tag }}</span></li>
+											<li class="hidden-tag hidden"><span class="tag">{{ tag }}</span></li>
 										{% endfor %}
 									</ul>
 									<p class="project-description">
@@ -92,8 +95,8 @@
 			</div>
 		</section>
 		<section class="section-contact" id="contact">
-			<div>
-				<div class="container-flex-col-120">
+			<div class="container-contact">
+				<div class="section-header">
 					<span class="subheading">Contact</span>
 					<h2 class="heading2 margin-bottom-48">Let's work together!</h2>
 				</div>

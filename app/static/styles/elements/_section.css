@@ -5,15 +5,20 @@
 }
 
 .section-showcase {
+  max-width: 120rem;
+  display: flex;
   padding: 9.6rem 0;
+  margin: 0 auto;
 }
 
 .section-contact {
-  height: 100vh;
   max-width: 120rem;
   display: flex;
-  align-items: center;
-  color: #343a40;
   padding: 9.6rem 0;
   margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
 }

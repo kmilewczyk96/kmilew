@@ -11,9 +11,10 @@
 
 /* PROJECT RELATED GRID CONTAINER VARIATIONS: */
 .project-showcase-grid {
-  align-items: flex-start;
+  align-items: start;
+  overflow: hidden;
   column-gap: 4.8rem;
-  margin-bottom: 6.4rem;
+  margin: 0 auto 6.4rem auto;
 }
 
 .project-list-grid {
@@ -21,11 +22,4 @@
   column-gap: 4.8rem;
   row-gap: 2.4rem;
   margin-bottom: 3.2rem;
-}
-
-/* CONTACT FORM RELATED GRID CONTAINER VARIATIONS */
-.contact-form-grid {
-  border: 1px solid #0b7285;
-  border-radius: 11px;
-  padding: 4.8rem;
 }
