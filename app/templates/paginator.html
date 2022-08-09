@@ -1,17 +1,29 @@
-{% if page_obj.has_other_pages %}
-	<div class="paginator-buttons">
-		{% if page_obj.has_previous %}
-			<a class="paginator-link"
-				 href="?={{ page_obj.previous_page_number }}"
-				 data-page="{{ page_obj.previous_page_number }}">&#10094;</a>
-		{% endif %}
+<div class="paginator-buttons">
+	{% if page_obj.has_previous %}
+		<a class="paginator-link btn--paginator"
+			 href="?={{ page_obj.previous_page_number }}"
+			 data-page="{{ page_obj.previous_page_number }}">&#10094;</a>
+	{% else %}
+		<a class="btn--paginator--inactive">&#10094;</a>
+	{% endif %}
 
-		<p class="paginator-page-info">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
-
-		{% if page_obj.has_next %}
-			<a class="paginator-link"
-				 href="?={{ page_obj.next_page_number }}"
-				 data-page="{{ page_obj.next_page_number }}">&#10095;</a>
+	{% for page_num in page_obj.paginator.page_range %}
+		{% if page_num == page_obj.number %}
+			<a class="paginator-link paginator-page paginator-page--current"
+				 href="?page={{ page_num }}"
+				 data-page="{{ page_num }}"></a>
+		{% else %}
+			<a class="paginator-link paginator-page"
+				 href="?page={{ page_num }}"
+				 data-page="{{ page_num }}"></a>
 		{% endif %}
-	</div>
-{% endif %}
+	{% endfor %}
+
+	{% if page_obj.has_next %}
+		<a class="paginator-link btn--paginator"
+			 href="?={{ page_obj.next_page_number }}"
+			 data-page="{{ page_obj.next_page_number }}">&#10095;</a>
+	{% else %}
+		<a class="btn--paginator--inactive">&#10095;</a>
+	{% endif %}
+</div>

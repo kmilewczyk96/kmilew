@@ -17,9 +17,12 @@
 </head>
 
 <body>
-	<header class="header-nav">
+	<header class="header-nav collapse-nav">
 		<ul class="nav-link-list">
 			<li><a class="page-link" href="{% url 'home' %}">Home</a></li>
+			<button class="btn--collapse">
+				<i class="ph-list-light"></i>
+			</button>
 			<li><a class="page-link" href="{% url 'home' %}#contact">Contact</a></li>
 		</ul>
 	</header>
@@ -28,7 +31,7 @@
 			<div class="container-flex-col-120">
 				<div class="container-flex-1-to-2">
 					<div class="filter-container">
-						<form class="tag-filter-form" action="{% url 'project-list' %}" method="GET">
+						<form class="tag-filter-form sticky" action="{% url 'project-list' %}" method="GET">
 							<p class="tag-filter-title">Filters:</p>
 							<div class="checkboxes">
 								{% for tag in tag_filter %}
@@ -53,8 +56,6 @@
 					</div>
 					<div class="project-list-container">
 						<aside class="paginator paginator--top">
-							<p class="paginator-object-count">Showing {{ page_obj|length }} out of {{ projects|length }}
-								project{{ projects|length|pluralize }}.</p>
 							{% include 'paginator.html' %}
 						</aside>
 						<div class="container-grid-2col project-list-grid">
@@ -97,8 +98,6 @@
 							{% endfor %}
 						</div>
 						<aside class="paginator paginator--bottom hidden">
-							<p class="paginator-object-count">Showing {{ page_obj|length }} out of {{ projects|length }}
-								project{{ projects|length|pluralize }}.</p>
 							{% include 'paginator.html' %}
 						</aside>
 					</div>

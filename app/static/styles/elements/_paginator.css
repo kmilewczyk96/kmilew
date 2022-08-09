@@ -6,23 +6,66 @@
 
 .paginator--top {
   border-bottom: 0.1rem solid #adb5bd;
-  padding: 0 0.2rem 0.4rem 0.2rem;
+  padding: 0 0.2rem 0.8rem 0.2rem;
 }
 
 .paginator--bottom {
   border-top: 0.1rem solid #adb5bd;
-  padding: 0.4rem 0.2rem;
+  padding: 0.8rem 0.2rem;
 }
 
 .paginator-buttons {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 0.8rem;
 }
 
-.paginator-link:link,
-.paginator-link:visited {
+.paginator-page {
   display: inline-block;
+  width: 3rem;
+  height: 1.4rem;
+  border: 1px solid #0b7285;
+  border-radius: 9px;
+}
+
+.paginator-page--current {
+  width: 6rem;
+  background-color: #15aabf;
+}
+
+.btn--paginator:link,
+.btn--paginator:visited,
+.btn--paginator--inactive {
   text-decoration: none;
-  cursor: pointer;
-  color: #343a40;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.paginator-link:link:hover,
+.paginator-link:visited:hover {
+  box-shadow: 0 5px 12px 3px rgba(0, 0, 0, 7%);
+}
+
+.paginator-link:link:active,
+.paginator-link:visited:active {
+  box-shadow: none;
+}
+
+.btn--paginator:link,
+.btn--paginator:visited {
+  color: #0b7285;
+  border: 1px solid #0b7285;
+}
+
+.btn--paginator--inactive {
+  cursor: default;
+  color: #f8f9fa;
+  background-color: #e9ecef;
+  border: 1px solid #adb5bd;
 }

@@ -1,5 +1,6 @@
 'use strict';
 
+
 const paginatorBottomVisibility = function () {
   // Add bottom paginator if doc height > viewport height:
   const documentHeight = document.documentElement.scrollHeight;
@@ -31,3 +32,29 @@ if (tagFilterForm) {
     });
   }
 }
+
+const toggleNavBtn = document.getElementsByClassName('btn--collapse')[0];
+const filterContainer = document.getElementsByClassName('filter-container')[0];
+const toggleFilter = function () {
+  filterContainer.classList.toggle('slide-in');
+};
+
+toggleNavBtn.addEventListener('click', toggleFilter);
+
+
+const filterForm = document.getElementsByClassName('tag-filter-form')[0];
+const filterStickyFlex = function () {
+  const remToPixel = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const filterHeight = (remToPixel * 9.6) + filterForm.scrollHeight;
+  const changeToFlex = filterHeight >= window.innerHeight;
+  if (changeToFlex) {
+    filterForm.classList.remove('sticky');
+  } else {
+    filterForm.classList.add('sticky');
+  }
+};
+
+window.addEventListener('load', filterStickyFlex);
+window.addEventListener('resize', filterStickyFlex);
+
+

@@ -145,7 +145,6 @@ body {
   .container-flex-1-to-2 {
     display: flex;
   }
-
 }
 
 @media (max-width: 58em) {
@@ -221,6 +220,65 @@ body {
 
   .project-list-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* PROJECT-LIST */
+  .collapse-nav .btn--collapse {
+    display: inline-block;
+  }
+
+  .filter-container {
+    background-color: rgba(73, 80, 87, 0.97);
+    position: fixed;
+    top: -100%;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    display: flex;
+    transition: transform 0.5s;
+    padding-top: 7.8rem;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+    z-index: 3;
+  }
+
+  .slide-in {
+    transform: translateY(100%);
+  }
+
+  .tag-filter-form {
+    position: unset;
+    justify-self: center;
+    align-self: center;
+    font-size: 2.4rem;
+    background-color: transparent;
+    color: #f8f9fa;
+    border: none;
+    border-radius: 0;
+    margin: 0 auto;
+  }
+
+  .tag-filter-title {
+    display: none;
+  }
+
+  .tag-filter-checkbox {
+    border-color: #f8f9fa;
+    background-color: #e9ecef;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .tag-filter-checkbox:before {
+    box-shadow: inset 1.2rem 1.2rem #0b7285;
+  }
+
+  .tag-filter-buttons {
+    border: 1px solid #f8f9fa;
+  }
+
+  .filter-btn--submit {
+    background-color: #0c8599;
   }
 }
 
