@@ -22,3 +22,10 @@
   display: flex;
   flex-direction: column;
 }
+
+.section-project-list {
+  max-width: 120rem;
+  display: flex;
+  padding-top: 9.6rem;
+  margin: 0 auto;
+}

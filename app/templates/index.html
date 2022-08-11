@@ -24,6 +24,13 @@
 			<li><a class="page-link" href="#projects">Projects</a></li>
 			<li><a class="page-link" href="#contact">Contact</a></li>
 		</ul>
+		{% if messages %}
+			<ul class="messages">
+				{% for message in messages %}
+					<li class="{{ message.tags }}">{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 	</header>
 	<main>
 		<section class="section-hero">
@@ -40,7 +47,7 @@
 					</div>
 				</div>
 				<div class="hero-whitespace">
-					<img src="{{ my_account.home_img.url }}" alt="cv picture">
+					<img src="{% static 'images/hero_img.png' %}" alt="cv picture">
 				</div>
 			</div>
 		</section>

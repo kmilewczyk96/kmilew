@@ -14,9 +14,7 @@ const prepareTagBarAnimation = function () {
       }
       const myAnimation = [{transform: `translate3d(-${tagBarScroll + remToPixel}px, 0, 0)`}];
       const myAnimationTiming = {duration: tagBarScroll * 30, iterations: Infinity};
-      tagBar.animate(myAnimation, myAnimationTiming)
-      console.log('DELAY!');
-      console.log(remToPixel);
+      tagBar.animate(myAnimation, myAnimationTiming);
     }
   }
 };

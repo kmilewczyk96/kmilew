@@ -16,6 +16,7 @@
 .container-flex-1-to-2 {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  margin-bottom: 9.6rem;
 }
 
 .container-flex-center {

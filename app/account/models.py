@@ -1,16 +1,7 @@
-import os.path
 import uuid
 
 from django.conf import settings
 from django.db import models
-
-
-def home_img_upload_path(_, filename):
-    """Generate file for home profile pic."""
-    extension = os.path.splitext(filename)[1]
-    filename = 'home' + extension
-
-    return os.path.join('account', filename)
 
 
 class Account(models.Model):
@@ -19,7 +10,6 @@ class Account(models.Model):
     first_name = models.CharField(max_length=30, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     position = models.CharField(max_length=48, null=False, blank=False)
-    home_img = models.ImageField(null=True, blank=True, upload_to=home_img_upload_path)
     description = models.TextField(max_length=256, null=True, blank=True)
     link_github = models.CharField(max_length=128, null=True, blank=True)
     link_linkedin = models.CharField(max_length=128, null=True, blank=True)
@@ -30,7 +20,7 @@ class Account(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return self.owner.email.split('@')[0]
+        return self.last_name
 
 
 class Message(models.Model):

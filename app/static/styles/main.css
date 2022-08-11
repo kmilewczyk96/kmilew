@@ -8,6 +8,7 @@
 @import url("./elements/_icon-and-logo.css");
 @import url("./elements/_link.css");
 @import url("./elements/_margin.css");
+@import url("./elements/_message.css");
 @import url("./elements/_navbar.css");
 @import url("./elements/_paginator.css");
 @import url("./elements/_project-card.css");
@@ -126,7 +127,9 @@ body {
 
   .project-showcase-grid {
     display: flex;
-    gap: 4.8rem;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-bottom: 4.8rem;
   }
 
   .project-showcase-grid .project-info-and-links-container:last-child {
@@ -138,8 +141,8 @@ body {
     justify-self: center;
   }
 
-  .filter-container {
-    display: none;
+  .project-list-grid {
+    grid-template-columns: 1fr;
   }
 
   .container-flex-1-to-2 {
@@ -162,12 +165,6 @@ body {
     padding-right: 1.6rem;
   }
 
-  .project-showcase-grid {
-    flex-direction: column;
-    gap: 2.4rem;
-    margin-bottom: 4.8rem;
-  }
-
   .project-info-and-links-container {
     width: 400px;
     justify-self: center;
@@ -176,13 +173,9 @@ body {
   .project-list-grid {
     column-gap: 3.2rem;
   }
-
-  .project-list-grid .project-info-and-links-container {
-    width: auto;
-  }
 }
 
-@media (max-width: 44em) {
+@media (max-width: 48em) {
   html {
     font-size: 50%;
   }

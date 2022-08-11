@@ -37,7 +37,7 @@
 .btn--cta:hover,
 .btn--cta:link:hover,
 .btn--cta:visited:hover {
-  background-color: #0b7285
+  background-color: #0b7285;
 }
 
 .btn.btn--cta-alt:link,

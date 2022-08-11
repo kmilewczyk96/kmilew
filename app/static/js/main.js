@@ -2,6 +2,8 @@
 
 // Smooth scrolling:
 const links = document.getElementsByTagName('a');
+const messages = document.getElementsByClassName('messages')[0];
+
 
 if (window.location.hash) {
   const hashPart = window.location.hash
@@ -31,4 +33,13 @@ for (let i = 0; i < links.length; i++) {
       }
     }
   })
+}
+
+if (messages) {
+  const myAnimation = [{opacity: '0'}];
+  const myAnimationTiming = {duration: 2000, fill: 'forwards', delay: 1500};
+  messages.animate(myAnimation, myAnimationTiming);
+  Promise.all(
+    messages.getAnimations().map((myAnimation) => myAnimation.finished)
+  ).then(() => messages.remove());
 }
