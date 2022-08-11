@@ -113,7 +113,7 @@
 						<div class="contact-form-field">
 							<label for="contact-form-name">Name
 								{% if form.sender_name.field.required %}
-									<span class="field-required">&#10035;</span>
+									<span class="field-required">*</span>
 								{% endif %}
 							</label>
 							{{ form.sender_name }}
@@ -121,7 +121,7 @@
 						<div class="contact-form-field">
 							<label for="contact-form-email">E-mail
 								{% if form.sender_email.field.required %}
-									<span class="field-required">&#10035;</span>
+									<span class="field-required">*</span>
 								{% endif %}
 							</label>
 							{{ form.sender_email }}
@@ -129,7 +129,7 @@
 						<div class="contact-form-field">
 							<label for="contact-form-company">Company
 								{% if form.company.field.required %}
-									<span class="field-required">&#10035;</span>
+									<span class="field-required">*</span>
 								{% endif %}
 							</label>
 							{{ form.company }}
@@ -137,7 +137,7 @@
 						<div class="contact-form-field">
 							<label for="contact-form-message">Message
 								{% if form.message.field.required %}
-									<span class="field-required">&#10035;</span>
+									<span class="field-required">*</span>
 								{% endif %}
 							</label>
 							{{ form.message }}
