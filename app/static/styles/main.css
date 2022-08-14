@@ -131,7 +131,7 @@ body {
     margin-bottom: 4.8rem;
   }
 
-  .no-flexbox-gap-support .project-list-grid:not(:last-child) {
+  .no-flexbox-gap-support .project-info-and-links-container:not(:last-child) {
     margin-bottom: 2.4rem;
   }
 
