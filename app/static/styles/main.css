@@ -308,42 +308,39 @@ body {
 }
 
 /*==== OLDER BROWSER FIXES =====*/
-.no-flexbox-gap-support .contact-form-content-col:not(:last-child) {
+.no-flexbox-gap-support .contact-form-field:not(:last-child) {
   margin-bottom: 2.4rem;
 }
 
-.no-flexbox-gap-support .contact-form-field:not(:last-child) {
-  margin-bottom: 0.8rem;
+.no-flexbox-gap-support .contact-form-field label {
+  margin-right: 0.8rem;
 }
 
-.no-flexbox-gap-support .project-list-container:not(:last-child) {
+.no-flexbox-gap-support .project-list-grid {
+  margin-top: 1.6rem;
   margin-bottom: 1.6rem;
 }
 
-.no-flexbox-gap-support .hero-links:not(:last-child) {
+.no-flexbox-gap-support .hero-links a:not(:last-child) {
   margin-right: 1.6rem;
 }
 
-.no-flexbox-gap-support .nav-link-list li:last-child {
-  margin-left: 3.2rem;
-}
-
-.no-flexbox-gap-support .project-card-links-container:not(:last-child) {
+.no-flexbox-gap-support .project-card-links-container a:not(:last-child) {
   margin-bottom: 1.6rem;
 }
 
-.no-flexbox-gap-support .project-tag-bar:not(:last-child) {
+.no-flexbox-gap-support .project-tag-bar li:not(:last-child) {
   margin-right: 1rem;
 }
 
-.no-flexbox-gap-support .tag-filter-form:not(:last-child) {
-  margin-bottom: 2.4rem;
+.no-flexbox-gap-support .tag-filter-form div {
+  margin-top: 2.4rem;
 }
 
 .no-flexbox-gap-support .checkboxes:not(:last-child) {
   margin-bottom: 1.2rem;
 }
 
-.no-flexbox-gap-support .checkboxes li:not(:last-child) {
+.no-flexbox-gap-support .checkboxes li .tag-filter-checkbox {
   margin-right: 1.2rem;
 }
