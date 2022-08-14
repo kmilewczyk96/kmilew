@@ -5,7 +5,6 @@
 @import url("./elements/_container-grid.css");
 @import url("./elements/_heading.css");
 @import url("./elements/_hero.css");
-@import url("./elements/_icon-and-logo.css");
 @import url("./elements/_link.css");
 @import url("./elements/_margin.css");
 @import url("./elements/_message.css");
@@ -130,6 +129,10 @@ body {
     flex-direction: column;
     gap: 2.4rem;
     margin-bottom: 4.8rem;
+  }
+
+  .no-flexbox-gap-support .project-list-grid:not(:last-child) {
+    margin-bottom: 2.4rem;
   }
 
   .project-showcase-grid .project-info-and-links-container:last-child {
@@ -302,4 +305,45 @@ body {
     width: 100%;
     padding: 0.8rem 1.2rem;
   }
+}
+
+/*==== OLDER BROWSER FIXES =====*/
+.no-flexbox-gap-support .contact-form-content-col:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+.no-flexbox-gap-support .contact-form-field:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
+.no-flexbox-gap-support .project-list-container:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap-support .hero-links:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap-support .nav-link-list li:last-child {
+  margin-left: 3.2rem;
+}
+
+.no-flexbox-gap-support .project-card-links-container:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap-support .project-tag-bar:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.no-flexbox-gap-support .tag-filter-form:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+.no-flexbox-gap-support .checkboxes:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.no-flexbox-gap-support .checkboxes li:not(:last-child) {
+  margin-right: 1.2rem;
 }
