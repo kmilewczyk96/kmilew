@@ -53,7 +53,11 @@
 					</div>
 				</div>
 				<div class="hero-whitespace">
-					<img src="{% static 'images/hero_img.png' %}" alt="cv picture">
+					<picture>
+						<source srcset="{% static 'images/hero_img.webp' %}">
+						<source srcset="{% static 'images/hero_img.png' %}">
+						<img src="{% static 'images/hero_img.png' %}" alt="cv picture">
+					</picture>
 				</div>
 			</div>
 		</section>
