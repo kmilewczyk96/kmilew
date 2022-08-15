@@ -1,8 +1,9 @@
-from django.conf import settings
+import os
+
 from django.core.mail import send_mail
 from django.db.models.signals import post_save
 
-from .models import Account, Message
+from .models import Message
 
 
 def message_notification(sender, instance, created, **kwargs):
@@ -15,13 +16,14 @@ def message_notification(sender, instance, created, **kwargs):
                   f'\n' \
                   f'{message_form_data.message}'
 
-        # send_mail(
-        #     subject=subject,
-        #     message=message,
-        #     from_email=settings.EMAIL_HOST_USER,
-        #     recipient_list=[Account.objects.first().owner.email],
-        #     fail_silently=False
-        # )
+        if int(os.environ.get('TOGGLE_SES')):
+            send_mail(
+                subject=subject,
+                message=message,
+                from_email=os.environ.get('AWS_SES_EMAIL'),
+                recipient_list=[os.environ.get('ACCOUNT_OWNER')],
+                fail_silently=False
+            )
 
 
 post_save.connect(receiver=message_notification, sender=Message)

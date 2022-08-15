@@ -127,14 +127,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-# TODO: finish setting up SMTP after hosting site on AWS.
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-# FOR EMAIL_PORT GOOGLE: 'GMAIL PORT'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'kmiew0802@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', default='')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', default='')
+AWS_SES_REGION_NAME = 'eu-central-1'
+AWS_SES_REGION_ENDPOINT = 'email.eu-central-1.amazonaws.com'
 
 
 # Static files (CSS, JavaScript, Images)

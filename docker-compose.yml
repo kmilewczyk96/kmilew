@@ -23,6 +23,7 @@ services:
       - ACCOUNT_OWNER=${DJANGO_ACCOUNT_OWNER}
       - ACCOUNT_PASS=${DJANGO_ACCOUNT_PASS}
       - DEBUG=1
+      - TOGGLE_SMTP=0
     depends_on:
       - db
 
