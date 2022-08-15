@@ -10,8 +10,8 @@ def generate_thumbnail(django_image_field):
         original.load()
 
     if original.height / original.width != 0.5625:
-        thumb_w = 1280
-        thumb_h = 720
+        thumb_w = 800
+        thumb_h = 450
         original.thumbnail(size=(thumb_w, thumb_h), resample=Image.Resampling.LANCZOS)
 
         # Check if thumbnail scaled properly:
@@ -24,7 +24,7 @@ def generate_thumbnail(django_image_field):
             else:
                 original = original.resize(size=(original.width, thumb_h))
 
-        background = Image.new(mode='RGB', size=(1280, 720), color=(52, 58, 64))
+        background = Image.new(mode='RGB', size=(800, 450), color=(52, 58, 64))
 
         pos = (
             (background.width - original.width) // 2,
@@ -35,7 +35,7 @@ def generate_thumbnail(django_image_field):
         original = background
 
     else:
-        original.thumbnail(size=(1280, 720), resample=Image.Resampling.LANCZOS)
+        original.thumbnail(size=(800, 450), resample=Image.Resampling.LANCZOS)
 
     original.save(output, format='PNG')
 
