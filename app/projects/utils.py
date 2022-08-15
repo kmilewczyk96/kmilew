@@ -24,12 +24,7 @@ def generate_thumbnail(django_image_field):
             else:
                 original = original.resize(size=(original.width, thumb_h))
 
-        background = original.resize(size=(1280, 720))
-        background = background.filter(ImageFilter.GaussianBlur(radius=7))
-        color_converter = ImageEnhance.Color(background)
-        background = color_converter.enhance(0.7)
-        sharpness_converter = ImageEnhance.Brightness(background)
-        background = sharpness_converter.enhance(0.5)
+        background = Image.new(mode='RGB', size=(1280, 720), color=(52, 58, 64))
 
         pos = (
             (background.width - original.width) // 2,

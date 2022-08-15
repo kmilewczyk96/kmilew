@@ -15,18 +15,18 @@
 	<script defer src="{% static 'js/project-list.js' %}"></script>
 	<script defer src="{% static 'js/tagbar-animation.js' %}"></script>
 	<script defer src="{% static 'js/browser-support.js' %}"></script>
-	<title>Browse Projects</title>
+	<title>Project Library</title>
 </head>
 
 <body>
 	<header class="header-nav collapse-nav">
 		<ul class="nav-link-list">
 			<li><a class="page-link" href="{% url 'home' %}">Home</a></li>
-			<button class="btn--collapse">
-				<i class="ph-list-light"></i>
-			</button>
 			<li><a class="page-link" href="{% url 'home' %}#contact">Contact</a></li>
 		</ul>
+		<button class="btn--collapse">
+			<i class="ph-list-light"></i>
+		</button>
 	</header>
 	<main>
 		<section class="section-project-list">
