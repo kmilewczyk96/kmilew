@@ -40,7 +40,10 @@
   padding: 0.8rem 0.4rem;
 }
 
-.page-link:hover {
-  color: #f8f9fa;
-  border-bottom-color: #f8f9fa;
+@media (hover: hover) {
+  .page-link:hover {
+    color: #f8f9fa;
+    border-bottom-color: #f8f9fa;
+  }
 }
+

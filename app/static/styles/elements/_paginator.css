@@ -47,9 +47,11 @@
   border-radius: 5px;
 }
 
-.paginator-link:link:hover,
-.paginator-link:visited:hover {
-  box-shadow: 0 5px 12px 3px rgba(0, 0, 0, 7%);
+@media (hover: hover) {
+  .paginator-link:link:hover,
+  .paginator-link:visited:hover {
+    box-shadow: 0 5px 12px 3px rgba(0, 0, 0, 7%);
+  }
 }
 
 .paginator-link:link:active,

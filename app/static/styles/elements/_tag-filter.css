@@ -109,17 +109,22 @@
   transition: 0.4s;
 }
 
-.filter-btn:hover > i {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .filter-btn:hover > i {
+    transform: scale(1.1);
+  }
 }
+
 
 .filter-btn--submit {
   background-color: #15aabf;
   width: 100%;
 }
 
-.filter-btn:hover {
-  background-color: #0b7285;
+@media (hover: hover) {
+  .filter-btn:hover {
+    background-color: #0b7285;
+  }
 }
 
 .filter-btn i {
@@ -133,6 +138,8 @@
   background-color: #495057;
 }
 
-.filter-btn--clear:hover {
-  background-color: #d6336c;
+@media (hover: hover) {
+  .filter-btn--clear:hover {
+    background-color: #d6336c;
+  }
 }

@@ -95,10 +95,12 @@ body {
     border: 1px solid #f8f9fa;
   }
 
-  .hero-links .btn--cta:link:hover,
-  .hero-links .btn--cta:visited:hover {
-    background-color: #0c8599;
-    border: 1px solid #f8f9fa;
+  @media (hover: hover) {
+    .hero-links .btn--cta:link:hover,
+    .hero-links .btn--cta:visited:hover {
+      background-color: #0c8599;
+      border: 1px solid #f8f9fa;
+    }
   }
 
   .hero-links .btn--cta-alt:link,
@@ -107,11 +109,12 @@ body {
     border: 1px solid #adb5bd;
   }
 
-  .hero-links .btn:link:hover,
-  .hero-links .btn:visited:hover {
-    box-shadow: 0 0 1.6rem rgba(255, 255, 255, 0.5);
+  @media (hover: hover) {
+    .hero-links .btn:link:hover,
+    .hero-links .btn:visited:hover {
+      box-shadow: 0 0 1.6rem rgba(255, 255, 255, 0.5);
+    }
   }
-
 
   .hero-whitespace {
     position: absolute;
